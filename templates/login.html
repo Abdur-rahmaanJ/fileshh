@@ -1,0 +1,16 @@
+
+
+
+<form 
+	method="POST"
+	action="{{url_for('login_check')}}">
+
+{{form.email.label}}<br>
+{{form.email}}<br>
+{{form.password.label}}<br>
+{{form.password}}<br>
+
+{{form.submit}}
+{{form.csrf_token}}
+
+</form>
