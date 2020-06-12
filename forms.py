@@ -8,7 +8,13 @@ from wtforms import PasswordField
 from wtforms.validators import DataRequired
 from wtforms.validators import Length
 from wtforms.validators import Email
+from wtforms import TextAreaField
+from flask_wtf.file import FileField
+from flask_wtf.file import FileAllowed
+from flask_wtf.file import FileRequired
 
+
+from init import photos
 
 class LoginForm(FlaskForm):
     email = StringField('Email', [
@@ -30,5 +36,22 @@ class LoginForm(FlaskForm):
         render_kw={
             'class':'btn btn-info',
             'value':'Login'
+            }
+        )
+
+
+class AddPhotoForm(FlaskForm):
+    photo = FileField('photo', validators=[
+        FileAllowed(photos, 'Invalid photo format'),
+        FileRequired('File was empty!')
+        ],
+        render_kw={
+            'class':'form-control',
+            'autocomplete':'off',
+            }
+        )
+    submit = SubmitField('Submit',
+        render_kw={
+            'class':'btn btn-info'
             }
         )

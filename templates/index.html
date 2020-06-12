@@ -1,0 +1,12 @@
+
+
+
+<form action="{{url_for('upload')}}"
+    method="POST"
+    enctype="multipart/form-data">
+
+    {{form.photo.label}}<br>
+    {{form.photo}}<br>
+    {{form.submit}}
+    {{form.csrf_token}}
+</form>

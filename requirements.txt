@@ -5,3 +5,4 @@ flask_uploads
 flask_login
 email_validator
 flask_script
+werkzeug==0.16.0
