@@ -6,6 +6,7 @@ from flask_script import Manager
 
 
 from init import db
+from app import app
 
 from models import *
 
